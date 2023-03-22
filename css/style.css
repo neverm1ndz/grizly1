@@ -2428,10 +2428,6 @@ h6 {
     padding-top: 3.125rem;
   }
 
-  .main__image img {
-    max-width: 70%;
-  }
-
   .main__image {
     display: -webkit-box;
     display: -ms-flexbox;
