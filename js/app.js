@@ -1119,14 +1119,7 @@
         const input = document.querySelector("#phone");
         const iti = intl_tel_input(input, {
             utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/16.0.0/js/utils.js",
-            separateDialCode: true,
-            initialCountry: "auto",
-            geoIpLookup: function(success, failure) {
-                $.get("https://ipinfo.io", (function() {}), "jsonp").always((function(resp) {
-                    var countryCode = resp && resp.country ? resp.country : "us";
-                    success(countryCode);
-                }));
-            }
+            separateDialCode: true
         });
         $(".form").on("submit", (function(event) {
             event.stopPropagation();
@@ -1149,8 +1142,8 @@
             }
             $(".submit", form).val("Отправка...");
             $("input, textarea", form).attr("disabled", "");
-            data.append("Ім'я", name);
-            data.append("Телефон", phone);
+            data.append("Name", name);
+            data.append("Phone", phone);
             data.append("Email", email);
             files.each((function(key, file) {
                 let cont = file.files;
@@ -1179,11 +1172,7 @@
                 },
                 error: function(jqXHR, textStatus) {},
                 complete: function() {
-                    tostConfig.text = "Ваш запрос был успешно отправлен. Наша команда свяжется с вами.";
-                    tostConfig.style.background = "linear-gradient(to right, #00b09b, #96c93d)";
-                    Toastify(tostConfig).showToast();
-                    console.log("Complete");
-                    form.reset();
+                    window.location.href = "complete.html";
                 }
             });
             return false;

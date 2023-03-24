@@ -1842,8 +1842,6 @@ h6 {
 }
 
 .footer__container {
-  padding-top: 3.125rem;
-  padding-bottom: 3.125rem;
   text-align: center;
 }
 
@@ -2177,7 +2175,39 @@ h6 {
   transition: all 0.3s ease 0s;
 }
 
+.page-thank {
+  min-height: 100vh;
+  background: -o-linear-gradient(315deg, #00c4cc, #0a1a44);
+  background: linear-gradient(135deg, #00c4cc, #0a1a44);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.page-thank__message {
+  font-weight: 500;
+  line-height: 130%;
+  text-align: center;
+  color: #fff;
+  background-color: #0a1a44;
+  border-radius: 1.5625rem;
+}
+
 @media (min-width: 75em) {
+  .footer__container {
+    padding-top: 3.125rem;
+  }
+
+  .footer__container {
+    padding-bottom: 3.125rem;
+  }
+
   .footer__text {
     font-size: 1.25rem;
   }
@@ -2289,6 +2319,14 @@ h6 {
   .form__button {
     font-size: 1.75rem;
   }
+
+  .page-thank__message {
+    font-size: 2.625rem;
+  }
+
+  .page-thank__message {
+    padding: 2.5rem;
+  }
 }
 
 @media (max-width: 75em) {
@@ -2314,6 +2352,14 @@ h6 {
 }
 
 @media (max-width: 20em) {
+  .footer__container {
+    padding-top: 1.25rem;
+  }
+
+  .footer__container {
+    padding-bottom: 1.25rem;
+  }
+
   .footer__text {
     font-size: 0.875rem;
   }
@@ -2420,6 +2466,14 @@ h6 {
 
   .form__button {
     font-size: 1.375rem;
+  }
+
+  .page-thank__message {
+    font-size: 1.25rem;
+  }
+
+  .page-thank__message {
+    padding: 1.5625rem;
   }
 }
 
@@ -2560,6 +2614,30 @@ h6 {
 }
 
 @media (min-width: 20em) and (max-width: 75em) {
+@supports (padding-top: clamp( 1.25rem , 0.5681818182rem  +  3.4090909091vw , 3.125rem )) {
+    .footer__container {
+      padding-top: clamp( 1.25rem , 0.5681818182rem  +  3.4090909091vw , 3.125rem );
+    }
+}
+
+@supports not (padding-top: clamp( 1.25rem , 0.5681818182rem  +  3.4090909091vw , 3.125rem )) {
+    .footer__container {
+      padding-top: calc(1.25rem + 1.875 * (100vw - 20rem) / 55);
+    }
+}
+
+@supports (padding-bottom: clamp( 1.25rem , 0.5681818182rem  +  3.4090909091vw , 3.125rem )) {
+    .footer__container {
+      padding-bottom: clamp( 1.25rem , 0.5681818182rem  +  3.4090909091vw , 3.125rem );
+    }
+}
+
+@supports not (padding-bottom: clamp( 1.25rem , 0.5681818182rem  +  3.4090909091vw , 3.125rem )) {
+    .footer__container {
+      padding-bottom: calc(1.25rem + 1.875 * (100vw - 20rem) / 55);
+    }
+}
+
 @supports (font-size: clamp( 0.875rem , 0.7386363636rem  +  0.6818181818vw , 1.25rem )) {
     .footer__text {
       font-size: clamp( 0.875rem , 0.7386363636rem  +  0.6818181818vw , 1.25rem );
@@ -2881,6 +2959,30 @@ h6 {
 @supports not (font-size: clamp( 1.375rem , 1.2386363636rem  +  0.6818181818vw , 1.75rem )) {
     .form__button {
       font-size: calc(1.375rem + 0.375 * (100vw - 20rem) / 55);
+    }
+}
+
+@supports (font-size: clamp( 1.25rem , 0.75rem  +  2.5vw , 2.625rem )) {
+    .page-thank__message {
+      font-size: clamp( 1.25rem , 0.75rem  +  2.5vw , 2.625rem );
+    }
+}
+
+@supports not (font-size: clamp( 1.25rem , 0.75rem  +  2.5vw , 2.625rem )) {
+    .page-thank__message {
+      font-size: calc(1.25rem + 1.375 * (100vw - 20rem) / 55);
+    }
+}
+
+@supports (padding: clamp( 1.5625rem , 1.2215909091rem  +  1.7045454545vw , 2.5rem )) {
+    .page-thank__message {
+      padding: clamp( 1.5625rem , 1.2215909091rem  +  1.7045454545vw , 2.5rem );
+    }
+}
+
+@supports not (padding: clamp( 1.5625rem , 1.2215909091rem  +  1.7045454545vw , 2.5rem )) {
+    .page-thank__message {
+      padding: calc(1.5625rem + 0.9375 * (100vw - 20rem) / 55);
     }
 }
 }
