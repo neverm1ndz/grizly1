@@ -1848,7 +1848,6 @@ h6 {
 }
 
 .footer__text {
-  font-size: 1.25rem;
   text-decoration: underline;
   line-height: 120%;
 }
@@ -2179,6 +2178,10 @@ h6 {
 }
 
 @media (min-width: 75em) {
+  .footer__text {
+    font-size: 1.25rem;
+  }
+
   .main__container {
     padding-top: 6.25rem;
   }
@@ -2311,6 +2314,10 @@ h6 {
 }
 
 @media (max-width: 20em) {
+  .footer__text {
+    font-size: 0.875rem;
+  }
+
   .main__container {
     padding-top: 3.125rem;
   }
@@ -2553,6 +2560,18 @@ h6 {
 }
 
 @media (min-width: 20em) and (max-width: 75em) {
+@supports (font-size: clamp( 0.875rem , 0.7386363636rem  +  0.6818181818vw , 1.25rem )) {
+    .footer__text {
+      font-size: clamp( 0.875rem , 0.7386363636rem  +  0.6818181818vw , 1.25rem );
+    }
+}
+
+@supports not (font-size: clamp( 0.875rem , 0.7386363636rem  +  0.6818181818vw , 1.25rem )) {
+    .footer__text {
+      font-size: calc(0.875rem + 0.375 * (100vw - 20rem) / 55);
+    }
+}
+
 @supports (padding-top: clamp( 3.125rem , 1.9886363636rem  +  5.6818181818vw , 6.25rem )) {
     .main__container {
       padding-top: clamp( 3.125rem , 1.9886363636rem  +  5.6818181818vw , 6.25rem );
